@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#193b32">
+<meta name="description" content="Website UMKM dengan katalog, keranjang belanja, dan pemesanan WhatsApp.">
+<title>Universal UMKM Template</title>
+<style>
+:root{--ink:#193b32;--ink2:#285447;--cream:#f7f4ec;--paper:#fffdf8;--line:#dcd9cf;--muted:#6f756f;--accent:#a9b89c;--danger:#a13b32}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}.wrap{width:min(1080px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(16px);background:rgba(247,244,236,.92);border-bottom:1px solid rgba(25,59,50,.08)}.navin{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-family:Georgia,serif;font-size:21px;font-weight:700}.navlinks{display:flex;gap:22px;align-items:center;font-size:13px;color:#53615b}.navcta,.btn{padding:12px 17px;border-radius:999px;background:var(--ink);color:#fff;font-weight:800;border:1px solid var(--ink);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}.mobile-menu{display:none}
+.hero{padding:76px 0 62px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#708078;font-weight:800}h1{font-family:Georgia,serif;font-size:clamp(48px,7vw,82px);line-height:.96;margin:18px 0 24px;letter-spacing:-.04em}.hero p{font-size:17px;line-height:1.75;color:#5f6862;max-width:560px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.btn.secondary{background:transparent;color:var(--ink)}.visual{min-height:380px;border-radius:32px;display:grid;place-items:center;background:radial-gradient(circle at 55% 30%,#fff9 0 12%,transparent 13%),radial-gradient(circle at 45% 35%,#d7dfcb 0 18%,transparent 19%),linear-gradient(145deg,#dfe6d6,#9cac91);box-shadow:0 24px 70px #193b321f}.cup{width:190px;height:190px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#b9c9a9,#6d896f 58%,#496a58);box-shadow:0 30px 45px #193b323d,inset 0 0 0 10px #ffffff38;color:#fff;font:700 18px Georgia,serif;letter-spacing:.16em}
+section{padding:68px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:26px}.section-head h2,.story h2,.order h2{font:700 clamp(35px,5vw,52px)/1 Georgia,serif;margin:0;letter-spacing:-.03em}.section-head p{max-width:460px;color:var(--muted);line-height:1.65;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--paper);border:1px solid var(--line);border-radius:23px;padding:22px;display:flex;flex-direction:column;gap:16px}.icon{width:46px;height:46px;border-radius:14px;background:#e5ebdf;display:grid;place-items:center;font-size:22px}.card h3{font:700 24px Georgia,serif;margin:0 0 7px}.card p{margin:0;color:var(--muted);line-height:1.55;font-size:14px}.price{font-weight:850;color:var(--ink);margin-top:8px;font-size:17px}.qty-row{display:flex;gap:9px;align-items:center;margin-top:auto}.qty-row label{font-size:13px;color:var(--muted)}.qty{width:76px;padding:9px;border:1px solid var(--line);border-radius:10px;background:white}.add-btn{flex:1;border:0;border-radius:12px;background:var(--ink);color:white;padding:11px 12px;font-weight:800;cursor:pointer}.note{margin-top:16px;padding:15px 18px;border:1px dashed #b8beb6;border-radius:16px;color:#6a716b;font-size:13px}
+.story{background:var(--ink);color:white;border-radius:30px;padding:48px}.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.story p{color:#d3ddd8;line-height:1.8}.pill{display:inline-block;border:1px solid #ffffff38;padding:9px 13px;border-radius:999px;font-size:12px;margin:4px 5px 0 0}
+.cart-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:24px}.panel h3{font:700 25px Georgia,serif;margin:0 0 16px}.cart-empty{color:var(--muted);padding:16px 0}.cart-item{display:grid;grid-template-columns:1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.cart-item:last-child{border-bottom:0}.cart-item small{display:block;color:var(--muted);margin-top:5px}.item-controls{display:flex;gap:7px;align-items:center;justify-content:end}.small-btn{border:1px solid var(--line);background:white;border-radius:9px;padding:5px 10px;cursor:pointer}.remove{color:var(--danger)}.addon-list{display:grid;gap:10px;margin-top:16px}.addon-option{display:flex;align-items:center;gap:10px;border:1px solid var(--line);padding:11px;border-radius:12px;font-size:14px}.addon-option span:last-child{margin-left:auto;font-weight:750}.summary-line{display:flex;justify-content:space-between;gap:15px;padding:10px 0;color:#56625b}.summary-line.total{border-top:1px solid var(--line);margin-top:5px;padding-top:16px;font-size:19px;font-weight:900;color:var(--ink)}.form-field{display:grid;gap:7px;margin:15px 0}.form-field label{font-size:13px;font-weight:750}.form-field input,.form-field textarea{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px;background:white;color:var(--ink)}.form-field textarea{min-height:78px;resize:vertical}.checkout-btn{width:100%;margin-top:12px}.fineprint{font-size:12px;line-height:1.6;color:var(--muted);margin:12px 0 0}.order{background:#e7eadf;border-radius:30px;padding:38px}.order p{color:#59645e;line-height:1.7;max-width:650px}.marketplace-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}.marketplace-links a{padding:10px 14px;border:1px solid var(--ink);border-radius:999px;font-weight:750;font-size:13px}.marketplace-links:empty{display:none}footer{padding:34px 0 45px;color:#788079;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:760px){.navin{padding:12px 0;flex-wrap:wrap;gap:10px}.navlinks{display:flex;width:100%;flex-wrap:wrap;justify-content:space-between;gap:9px;font-size:12px}.navcta{padding:8px 11px}.mobile-menu{display:none}.hero{padding:45px 0}.hero-grid,.story-grid,.cart-layout{grid-template-columns:1fr}.visual{min-height:290px}.cards{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:12px}.story{padding:30px 23px}.panel{padding:20px}.order{padding:28px 22px}section{padding:50px 0}.cart-item{grid-template-columns:minmax(0,1fr);}.item-controls{justify-content:flex-start;flex-wrap:wrap}.qty-row{flex-wrap:wrap}.qty-row label{width:auto}.qty{width:68px}.add-btn{min-width:110px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap navin"><a class="brand" href="#" id="brand">Nama Usaha</a><div class="navlinks"><a href="#menu">Menu</a><a href="#about">Tentang</a><a href="#cart">Keranjang</a><a class="navcta" href="#cart">Pesan <span id="navCount">0</span></a></div><a class="mobile-menu" href="#menu">Menu ↓</a></div></nav>
+<main>
+<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow" id="eyebrow"></div><h1 id="tagline"></h1><p id="description"></p><div class="actions"><a class="btn" href="#menu">Lihat produk ↓</a><a class="btn secondary" href="#cart">Lihat keranjang</a></div></div><div class="visual" aria-label="Ilustrasi produk"><div class="cup">UMKM</div></div></div></section>
+<section id="menu"><div class="wrap"><div class="section-head"><h2>Menu & Produk</h2><p>Pilih jumlah produk lalu tambahkan ke keranjang. Harga dan produk dapat diubah melalui config.js.</p></div><div class="cards" id="menuCards"></div><div class="note">Tips: gunakan tombol “Tambah” pada produk yang diinginkan. Pilihan add-on dan total pesanan tersedia di keranjang.</div></div></section>
+<section id="about"><div class="wrap"><div class="story"><div class="story-grid"><div><div class="eyebrow" style="color:#aebcb4">Tentang usaha</div><h2 id="aboutTitle"></h2><p id="aboutText"></p></div><div id="tags"></div></div></div></div></section>
+<section id="cart"><div class="wrap"><div class="section-head"><h2>Keranjang belanja</h2><p>Periksa item, ubah jumlah, pilih tambahan, lalu lanjutkan pesanan melalui WhatsApp.</p></div><div class="cart-layout"><div class="panel"><h3>Pesananmu</h3><div id="cartItems" class="cart-empty">Keranjang masih kosong. Silakan pilih produk dari menu.</div><h3 style="font-size:20px;margin-top:25px">Add-on / tambahan</h3><div class="addon-list" id="addonList"></div></div><div class="panel"><h3>Ringkasan pesanan</h3><div class="summary-line"><span>Subtotal produk</span><strong id="subtotal">Rp0</strong></div><div class="summary-line"><span>Total add-on</span><strong id="addonTotal">Rp0</strong></div><div class="summary-line total"><span>Total bayar</span><strong id="grandTotal">Rp0</strong></div><div class="form-field"><label for="customerName">Nama pemesan *</label><input id="customerName" placeholder="Nama kamu" autocomplete="name"></div><div class="form-field"><label for="customerAddress">Alamat / metode pengambilan</label><input id="customerAddress" placeholder="Contoh: ambil di toko / alamat pengantaran"></div><div class="form-field"><label for="customerNote">Catatan pesanan</label><textarea id="customerNote" placeholder="Contoh: tidak pakai sedotan, atau catatan lain"></textarea></div><button class="btn checkout-btn" id="checkoutBtn" type="button">Checkout via WhatsApp →</button><p class="fineprint">Pesanan akan disiapkan sebagai pesan WhatsApp. Periksa kembali detail pesanan dan kirim pesan secara manual. Pembayaran tidak diproses oleh website.</p></div></div></div></section>
+<section><div class="wrap"><div class="order"><div class="eyebrow">Hubungi kami</div><h2>Ingin bertanya?</h2><p>Hubungi usaha kami melalui WhatsApp atau kunjungi media sosial untuk melihat informasi terbaru.</p><div class="actions"><a class="btn" id="waButton" href="#cart">WhatsApp →</a><a class="btn secondary" id="igButton" href="https://www.instagram.com/">Instagram →</a></div><div class="marketplace-links" id="marketplaceLinks" aria-label="Toko marketplace"></div><p style="font-size:13px">📍 <span id="location"></span></p></div></div></section>
+</main><footer><div class="wrap" id="footer"></div></footer>
+<script src="config.js"></script>
+<script>
+(() => {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const rupiah = (value) => new Intl.NumberFormat("id-ID", {style:"currency",currency:SITE.currency || "IDR",maximumFractionDigits:0}).format(value);
+  const safeText = (value) => String(value ?? "");
+  const state = { cart: {}, addons: new Set() };
+  const products = Array.isArray(SITE.menu) ? SITE.menu : [];
+  const addons = Array.isArray(SITE.addons) ? SITE.addons : [];
+  const validPrice = (n) => Number.isFinite(Number(n)) && Number(n) >= 0 ? Number(n) : 0;
+
+  document.title = safeText(SITE.businessName || "Website UMKM");
+  $("brand").textContent = SITE.businessName || "Nama Usaha";
+  $("eyebrow").textContent = SITE.eyebrow || "";
+  $("tagline").textContent = SITE.tagline || "Produk pilihan Anda.";
+  $("description").textContent = SITE.description || "";
+  $("aboutTitle").textContent = SITE.aboutTitle || "Tentang kami";
+  $("aboutText").textContent = SITE.aboutText || "";
+  $("location").textContent = SITE.location || "";
+  $("footer").textContent = `${SITE.businessName || "UMKM"} · ${SITE.location || ""} · ${new Date().getFullYear()}`;
+  $("tags").replaceChildren(...(SITE.tags || []).map(tag => { const el=document.createElement("span"); el.className="pill"; el.textContent=tag; return el; }));
+  const waNumber = String(SITE.whatsapp || "").replace(/[^\d]/g, "");
+  const waBase = waNumber ? `https://wa.me/${waNumber}` : "";
+  $("waButton").href = waBase || "#cart";
+  $("waButton").target = "_blank"; $("waButton").rel = "noopener noreferrer";
+  $("igButton").href = SITE.instagram || "#"; $("igButton").target="_blank"; $("igButton").rel="noopener noreferrer";
+  $("igButton").textContent = `${SITE.instagramLabel || "Instagram"} →`;
+  if (!SITE.instagram) { $("igButton").hidden = true; }
+  const marketplaceContainer = $("marketplaceLinks");
+  (Array.isArray(SITE.marketplaces) ? SITE.marketplaces : []).forEach((marketplace) => {
+    const url = String(marketplace.url || "").trim();
+    if (!url) return;
+    const link = document.createElement("a");
+    link.href = url; link.target = "_blank"; link.rel = "noopener noreferrer";
+    link.textContent = `${marketplace.label || "Marketplace"} →`;
+    marketplaceContainer.append(link);
+  });
+
+  const menuCards = $("menuCards");
+  products.forEach((item, index) => {
+    const id = String(item.id || `product-${index}`);
+    const card = document.createElement("article"); card.className="card";
+    const icon=document.createElement("div"); icon.className="icon"; icon.textContent=item.icon || "🛍️";
+    const info=document.createElement("div");
+    const title=document.createElement("h3"); title.textContent=item.name || "Produk";
+    const desc=document.createElement("p"); desc.textContent=item.description || "";
+    const price=document.createElement("div"); price.className="price"; price.textContent=rupiah(validPrice(item.price));
+    info.append(title,desc,price);
+    const row=document.createElement("div"); row.className="qty-row";
+    const label=document.createElement("label"); label.textContent="Jumlah";
+    const qty=document.createElement("input"); qty.className="qty"; qty.type="number"; qty.min="1"; qty.max="99"; qty.step="1"; qty.value="1"; qty.setAttribute("aria-label",`Jumlah ${item.name || "produk"}`);
+    const add=document.createElement("button"); add.className="add-btn"; add.type="button"; add.textContent="Tambah";
+    add.addEventListener("click",()=>{ const count=Math.max(1,Math.min(99,parseInt(qty.value,10)||1)); state.cart[id]=(state.cart[id]||0)+count; renderCart(); $("cart").scrollIntoView({behavior:"smooth",block:"start"}); });
+    row.append(label,qty,add); card.append(icon,info,row); menuCards.append(card);
+  });
+
+  addons.forEach((addon,index)=>{
+    const id=String(addon.id || `addon-${index}`);
+    const label=document.createElement("label"); label.className="addon-option";
+    const checkbox=document.createElement("input"); checkbox.type="checkbox"; checkbox.checked=false;
+    checkbox.addEventListener("change",()=>{if(checkbox.checked)state.addons.add(id);else state.addons.delete(id);renderCart();});
+    const name=document.createElement("span"); name.textContent=addon.name || "Tambahan";
+    const price=document.createElement("span"); price.textContent=`+${rupiah(validPrice(addon.price))}`;
+    label.append(checkbox,name,price); $("addonList").append(label);
+  });
+
+  function renderCart(){
+    const container=$("cartItems"); container.replaceChildren();
+    const entries=products.map((item,index)=>({item,id:String(item.id||`product-${index}`),qty:state.cart[String(item.id||`product-${index}`)]||0})).filter(x=>x.qty>0);
+    if(!entries.length){container.className="cart-empty";container.textContent="Keranjang masih kosong. Silakan pilih produk dari menu.";}
+    else{
+      container.className="";
+      entries.forEach(({item,id,qty})=>{
+        const row=document.createElement("div");row.className="cart-item";
+        const info=document.createElement("div");const name=document.createElement("strong");name.textContent=item.name||"Produk";
+        const detail=document.createElement("small");detail.textContent=`${rupiah(validPrice(item.price))} × ${qty} = ${rupiah(validPrice(item.price)*qty)}`;info.append(name,detail);
+        const controls=document.createElement("div");controls.className="item-controls";
+        const minus=document.createElement("button");minus.className="small-btn";minus.type="button";minus.textContent="−";minus.setAttribute("aria-label",`Kurangi ${item.name}`);minus.addEventListener("click",()=>{state.cart[id]=Math.max(0,(state.cart[id]||0)-1);if(!state.cart[id])delete state.cart[id];renderCart();});
+        const count=document.createElement("strong");count.textContent=String(qty);
+        const plus=document.createElement("button");plus.className="small-btn";plus.type="button";plus.textContent="+";plus.setAttribute("aria-label",`Tambah ${item.name}`);plus.addEventListener("click",()=>{state.cart[id]=Math.min(99,(state.cart[id]||0)+1);renderCart();});
+        const remove=document.createElement("button");remove.className="small-btn remove";remove.type="button";remove.textContent="Hapus";remove.addEventListener("click",()=>{delete state.cart[id];renderCart();});
+        controls.append(minus,count,plus,remove);row.append(info,controls);container.append(row);
+      });
+    }
+    const subtotal=entries.reduce((sum,x)=>sum+validPrice(x.item.price)*x.qty,0);
+    const addonTotal=addons.filter((a,i)=>state.addons.has(String(a.id||`addon-${i}`))).reduce((sum,a)=>sum+validPrice(a.price),0);
+    $("subtotal").textContent=rupiah(subtotal);$("addonTotal").textContent=rupiah(addonTotal);$("grandTotal").textContent=rupiah(subtotal+addonTotal);
+    $("navCount").textContent=String(entries.reduce((sum,x)=>sum+x.qty,0));
+  }
+
+  $("checkoutBtn").addEventListener("click",()=>{
+    const entries=products.map((item,index)=>({item,id:String(item.id||`product-${index}`),qty:state.cart[String(item.id||`product-${index}`)]||0})).filter(x=>x.qty>0);
+    if(!entries.length){alert("Keranjang masih kosong. Silakan tambahkan produk terlebih dahulu.");return;}
+    if(!waNumber){alert("Nomor WhatsApp belum diatur. Silakan isi SITE.whatsapp di config.js.");return;}
+    const name=$("customerName").value.trim();
+    if(!name){alert("Silakan isi nama pemesan terlebih dahulu.");$("customerName").focus();return;}
+    const selectedAddons=addons.filter((a,i)=>state.addons.has(String(a.id||`addon-${i}`)));
+    const subtotal=entries.reduce((sum,x)=>sum+validPrice(x.item.price)*x.qty,0);
+    const addonTotal=selectedAddons.reduce((sum,a)=>sum+validPrice(a.price),0);
+    const lines=[SITE.whatsappMessage || "Halo, saya ingin memesan:", "", `Nama: ${name}`];
+    const address=$("customerAddress").value.trim();const note=$("customerNote").value.trim();
+    if(address)lines.push(`Alamat/metode pengambilan: ${address}`);
+    lines.push("","DETAIL PESANAN:");
+    entries.forEach(({item,qty})=>lines.push(`- ${item.name} x${qty} = ${rupiah(validPrice(item.price)*qty)}`));
+    if(selectedAddons.length){lines.push("","ADD-ON:");selectedAddons.forEach(a=>lines.push(`- ${a.name} = ${rupiah(validPrice(a.price))}`));}
+    lines.push("","Subtotal produk: "+rupiah(subtotal), "Total add-on: "+rupiah(addonTotal), "TOTAL BAYAR: "+rupiah(subtotal+addonTotal));
+    if(note)lines.push("","Catatan: "+note);
+    lines.push("","Mohon konfirmasi ketersediaan dan cara pembayaran. Terima kasih.");
+    window.open(`${waBase}?text=${encodeURIComponent(lines.join("\n"))}`,"_blank","noopener");
+  });
+  renderCart();
+})();
+</script>
+</body></html>
