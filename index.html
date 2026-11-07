@@ -79,7 +79,7 @@ section{padding:68px 0}.section-head{display:flex;align-items:end;justify-conten
     const label=document.createElement("label"); label.textContent="Jumlah";
     const qty=document.createElement("input"); qty.className="qty"; qty.type="number"; qty.min="1"; qty.max="99"; qty.step="1"; qty.value="1"; qty.setAttribute("aria-label",`Jumlah ${item.name || "produk"}`);
     const add=document.createElement("button"); add.className="add-btn"; add.type="button"; add.textContent="Tambah";
-    add.addEventListener("click",()=>{ const count=Math.max(1,Math.min(99,parseInt(qty.value,10)||1)); state.cart[id]=(state.cart[id]||0)+count; renderCart(); $("cart").scrollIntoView({behavior:"smooth",block:"start"}); });
+    add.addEventListener("click",()=>{ const count=Math.max(1,Math.min(99,parseInt(qty.value,10)||1)); state.cart[id]=(state.cart[id]||0)+count; renderCart();  });
     row.append(label,qty,add); card.append(icon,info,row); menuCards.append(card);
   });
 
